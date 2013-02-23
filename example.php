@@ -1,10 +1,4 @@
 <?php
-// ï
-
-require('Autoloader.php');
-spl_autoload_register('Autoloader::load');
-
-
 
 /*******************************************************************************
 * How to send commands to the bridge: 
