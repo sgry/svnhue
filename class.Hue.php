@@ -579,6 +579,51 @@ class Hue extends BaseHue
 
 
 
+  /******************************************************************************/
+  /*   function registerApp()                                                   */
+  /******************************************************************************/
+  public function registerApp($As_Name)
+  {
+    $Lb_Return = true;
+    $this->a_Errors = null;
+    $Ls_Method = 'POST';
+
+    if (!$As_Name)
+    {
+      $this->a_Errors[] = self::SVNHUE_ERROR_WRONG_PARAMETER;
+      $Lb_Return = false;
+    } /* if */
+
+    if ($Lb_Return === true)
+    {
+      $Ls_Url = $this->s_HueHost.'/api';
+
+      $La_Action = array('username' => $this->s_AuthKey, 'devicetype' => $As_Name);
+      $La_Action = json_encode($La_Action);
+
+      $Lo_Curl = curl_init($Ls_Url);
+      curl_setopt($Lo_Curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($Lo_Curl, CURLOPT_POSTFIELDS, $La_Action);
+      curl_setopt($Lo_Curl, CURLOPT_CUSTOMREQUEST, $Ls_Method);
+      $Ls_Response = curl_exec($Lo_Curl);
+
+      $La_Response = json_decode($Ls_Response);
+      foreach($La_Response as $Lo_Response)
+      {
+        if (isset($Lo_Response->error))
+        {
+          $this->a_Errors[] = $Lo_Response->error;
+          $Lb_Return = false;
+        } /* if */
+      } /* foreach */
+    } /* if */
+
+    return($Lb_Return);
+
+  } /* function registerApp() */
+
+
+
 } /* class \SVN\HUE\Hue */
 
 ?>
