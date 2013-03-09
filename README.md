@@ -109,11 +109,25 @@ $Lo_Hue->deleteGroups();
 
 
 /*******************************************************************************
+* How to register your App on the Bridge:
+*******************************************************************************/
+
+// Create Hue Object
+$Ls_Host = '192.168.1.23';
+$Ls_AuthKey = '194253fd922301d88d816cd6731ae28b'; // Choose your AuthKey
+$Lo_Hue = new \SVN\HUE\Hue($Ls_Host, $Ls_AuthKey);
+
+// Register
+$Lo_Hue->registerApp('Name of your App');
+
+
+
+/*******************************************************************************
 * Misc:
 *******************************************************************************/
 /*
   All functions return bool true on success.
-  You can check if something went wrong with the method getErrors()
+  You can check if something went wrong with the method $Lo_Hue->getErrors()
 
 */
 
