@@ -14,10 +14,10 @@ Example usage:
 // Create Hue Object
 $Ls_Host = '192.168.1.23';
 $Ls_AuthKey = '194253fd922301d88d816cd6731ae28b';
-$Lo_Hue = new \SVN\HUE\Hue($Ls_Host, $Ls_AuthKey);
+$Lo_Hue = new \sgry\svnhue\Hue($Ls_Host, $Ls_AuthKey);
 
 // Create HueState object
-$Lo_HueState = new \SVN\HUE\HueState();
+$Lo_HueState = new \sgry\svnhue\HueState();
 
 // Set Color
 // Only 1 colormode is possible per HueState object
@@ -44,7 +44,7 @@ $Lo_Hue->setState($Lo_HueState);
 // Create HueSchedule object
 $Ldt_DateTime = new \DateTime();
 $Ldt_DateTime->add(new DateInterval('P1D')); // Add 1 Day
-$Lo_HueSchedule = new \SVN\HUE\SHX\HueSchedule('Name', 'Description', $Ldt_DateTime);
+$Lo_HueSchedule = new \sgry\svnhue\HueSchedule('Name', 'Description', $Ldt_DateTime);
 
 // Inject HueSchedule into Hue object
 $Lo_Hue->setSchedule($Lo_HueSchedule);
@@ -66,7 +66,7 @@ $Lo_Hue->submitToBridge();
 // Create Hue Object
 $Ls_Host = '192.168.1.23';
 $Ls_AuthKey = '194253fd922301d88d816cd6731ae28b';
-$Lo_Hue = new \SVN\HUE\Hue($Ls_Host, $Ls_AuthKey);
+$Lo_Hue = new \sgry\svnhue\Hue($Ls_Host, $Ls_AuthKey);
 
 // Set the light or the group you want to read out
 // Only 1 targetmode is possible per Hue object, either lights or groups
@@ -89,7 +89,7 @@ $Lo_HueState = $Lo_Hue->getState();
 // Create Hue Object
 $Ls_Host = '192.168.1.23';
 $Ls_AuthKey = '194253fd922301d88d816cd6731ae28b';
-$Lo_Hue = new \SVN\HUE\Hue($Ls_Host, $Ls_AuthKey);
+$Lo_Hue = new \sgry\svnhue\Hue($Ls_Host, $Ls_AuthKey);
 
 // Set the lights you want to add to the new group
 $Lo_Hue->setLights(array(1,2));
@@ -115,7 +115,7 @@ $Lo_Hue->deleteGroups();
 // Create Hue Object
 $Ls_Host = '192.168.1.23';
 $Ls_AuthKey = '194253fd922301d88d816cd6731ae28b'; // Choose your AuthKey
-$Lo_Hue = new \SVN\HUE\Hue($Ls_Host, $Ls_AuthKey);
+$Lo_Hue = new \sgry\svnhue\Hue($Ls_Host, $Ls_AuthKey);
 
 // Register
 $Lo_Hue->registerApp('Name of your App');
