@@ -1,5 +1,5 @@
 {
-    "name": "sgry/Hue",
+    "name": "sgry/svnhue",
     "description": "Control your Philips Hue lights with PHP",
     "keywords": ["philips", "hue"],
     "homepage": "http://github.com/sgry/svnhue",
