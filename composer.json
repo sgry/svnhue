@@ -4,6 +4,7 @@
     "keywords": ["philips", "hue"],
     "homepage": "http://github.com/sgry/svnhue",
     "type": "library",
+    "license": "WTFPL",
     "authors": [
         {
             "name": "Sven Gryspeerdt",

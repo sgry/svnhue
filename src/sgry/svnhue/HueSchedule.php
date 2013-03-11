@@ -6,7 +6,7 @@
  *
  * PHP version 5.3
  *
- * LICENSE: meh
+ * LICENSE: WTFPL
  *
  * @author     Sven Gryspeerdt <hansmopf@gmail.com>
  * @link       http://gryspeerdt.ch/hue/
